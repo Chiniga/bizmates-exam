@@ -37632,47 +37632,6 @@ var render = function() {
       _c("div", { staticClass: "col-md-8" }, [
         _c("div", { staticClass: "card mt-3" }, [
           _c("div", { staticClass: "card-header" }, [
-            _vm._v("Places To Visit in " + _vm._s(_vm.city))
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "card-body" },
-            _vm._l(_vm.venuesList, function(venue) {
-              return _c(
-                "div",
-                { key: venue.id, staticClass: "list-group list-group-flush" },
-                [
-                  _c(
-                    "div",
-                    { staticClass: "list-group-item list-group-item-action" },
-                    [
-                      _c("p", { staticClass: "font-weight-bold" }, [
-                        _vm._v(_vm._s(venue.name))
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _vm._v(
-                          "\n                                " +
-                            _vm._s(venue.location.address) +
-                            ", " +
-                            _vm._s(venue.location.city) +
-                            ", " +
-                            _vm._s(venue.location.country) +
-                            "\n                            "
-                        )
-                      ])
-                    ]
-                  )
-                ]
-              )
-            }),
-            0
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card mt-3" }, [
-          _c("div", { staticClass: "card-header" }, [
             _vm._v("Weather Forecast for " + _vm._s(_vm.city))
           ]),
           _vm._v(" "),
@@ -37714,6 +37673,47 @@ var render = function() {
                         _c("div", { staticClass: "col-md-4" }, [
                           _vm._v("PRESSURE: " + _vm._s(item.main.pressure))
                         ])
+                      ])
+                    ]
+                  )
+                ]
+              )
+            }),
+            0
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card mt-3" }, [
+          _c("div", { staticClass: "card-header" }, [
+            _vm._v("Places To Visit in " + _vm._s(_vm.city))
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "card-body" },
+            _vm._l(_vm.venuesList, function(venue) {
+              return _c(
+                "div",
+                { key: venue.id, staticClass: "list-group list-group-flush" },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "list-group-item list-group-item-action" },
+                    [
+                      _c("p", { staticClass: "font-weight-bold" }, [
+                        _vm._v(_vm._s(venue.name))
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _vm._v(
+                          "\n                                " +
+                            _vm._s(venue.location.address) +
+                            ", " +
+                            _vm._s(venue.location.city) +
+                            ", " +
+                            _vm._s(venue.location.country) +
+                            "\n                            "
+                        )
                       ])
                     ]
                   )
@@ -53054,7 +53054,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_HomeComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/HomeComponent.vue */ "./resources/js/components/HomeComponent.vue");
-/* harmony import */ var _components_DetailsComponent_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/DetailsComponent.vue */ "./resources/js/components/DetailsComponent.vue");
+/* harmony import */ var _components_DetailsComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/DetailsComponent.vue */ "./resources/js/components/DetailsComponent.vue");
 
 
 
@@ -53088,7 +53088,7 @@ var routes = [{
 }, {
   name: 'view',
   path: '/city-details/:city',
-  component: _components_DetailsComponent_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
+  component: _components_DetailsComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
 }];
 var vueRouter = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   mode: 'history',
