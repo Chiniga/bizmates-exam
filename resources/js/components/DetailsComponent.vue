@@ -3,20 +3,6 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card mt-3">
-                    <div class="card-header">Places To Visit in {{ city }}</div>
-
-                    <div class="card-body">
-                        <div class="list-group list-group-flush" v-for="venue in venuesList" v-bind:key="venue.id">
-                            <div class="list-group-item list-group-item-action">
-                                <p class="font-weight-bold">{{ venue.name }}</p>
-                                <div>
-                                    {{ venue.location.address }}, {{ venue.location.city }}, {{ venue.location.country }}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mt-3">
                     <div class="card-header">Weather Forecast for {{ city }}</div>
 
                     <div class="card-body">
@@ -30,6 +16,20 @@
                                     <div class="col-md-4 text-uppercase">{{ item.weather[0].description }}</div>
                                     <div class="col-md-4">TEMP: {{ item.main.temp }} K</div>
                                     <div class="col-md-4">PRESSURE: {{ item.main.pressure }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-header">Places To Visit in {{ city }}</div>
+
+                    <div class="card-body">
+                        <div class="list-group list-group-flush" v-for="venue in venuesList" v-bind:key="venue.id">
+                            <div class="list-group-item list-group-item-action">
+                                <p class="font-weight-bold">{{ venue.name }}</p>
+                                <div>
+                                    {{ venue.location.address }}, {{ venue.location.city }}, {{ venue.location.country }}
                                 </div>
                             </div>
                         </div>
