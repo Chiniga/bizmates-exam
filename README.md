@@ -1,5 +1,5 @@
 <p align="center">CODE EXPLANATION</p>
-My code UI and UX are best, given the time restriction, simply because
+My code UI and UX are best simply because
 the app is easy to use and to look at. It provides all the information they need with no wasted data.
 The use can also check the weather 5 days in advance which is very helpful for planning ahead.
 
