@@ -110,12 +110,22 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | weather details
+    | weather api details
     |--------------------------------------------------------------------------
     */
 
     'weather_url' => env('WEATHER_URL', ''),
     'weather_api_key' => env('WEATHER_API_KEY', ''),
+
+    /*
+    |--------------------------------------------------------------------------
+    | foursquare api details
+    |--------------------------------------------------------------------------
+    */
+
+    'foursquare_url' => env('FOURSQUARE_URL', ''),
+    'foursquare_client_id' => env('FOURSQUARE_CLIENT_ID', ''),
+    'foursquare_secret' => env('FOURSQUARE_SECRET', ''),
 
     /*
     |--------------------------------------------------------------------------
