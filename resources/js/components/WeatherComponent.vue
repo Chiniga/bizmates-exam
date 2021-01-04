@@ -3,9 +3,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <p>Search for city in Japan</p>
-                    <input v-model="city" v-on:keyup="getCityDetails" />
-                    <p>{{ fourRes }}</p>
+                    <p class="card-header">{{ city }}</p>
                 </div>
             </div>
         </div>
@@ -13,28 +11,24 @@
 </template>
 
 <script>
-    let timeout
-
-    const getCityDetails = () => {
-        clearTimeout(timeout)
-        timeout = setTimeout(() => {
-            const data = axios.get(`/api/get-location/${city}`).then((result) => {
-
-            })
-        }, 3000)
-    }
-
     const Weather = {
-        data: () => {
-            return { 
-                city: "",
-                fourRes: []
-            }
+        created: function() {
+            const location = this.$route.params.city
+            const venueAPI = `/api/location/${location}`
+            const weatherAPI = `/api/weather/${location}`
+
+            // get weather via laravel api
+            this.axios.get(weatherAPI, function(resp) {
+                console.log(resp)
+            })
+
+            //
         },
-        methods: {
-            getCityDetails: getCityDetails
+        data: function() {
+            return { 
+                city: this.$route.params.city
+            }
         }
-        
     }
 
     export default Weather
