@@ -1959,20 +1959,41 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var Weather = {
+  data: function data() {
+    return {
+      city: this.$route.params.city,
+      weatherList: {},
+      weatherImgUrl: 'http://openweathermap.org/img/w/'
+    };
+  },
   created: function created() {
+    var $this = this;
     var location = this.$route.params.city;
     var venueAPI = "/api/location/".concat(location);
     var weatherAPI = "/api/weather/".concat(location); // get weather via laravel api
 
-    this.axios.get(weatherAPI, function (resp) {
-      console.log(resp);
+    this.axios.get(weatherAPI).then(function (resp) {
+      if (resp.data.status) {
+        $this.weatherList = resp.data.data.content.list;
+      }
     }); //
-  },
-  data: function data() {
-    return {
-      city: this.$route.params.city
-    };
   }
 };
 /* harmony default export */ __webpack_exports__["default"] = (Weather);
@@ -37652,8 +37673,57 @@ var render = function() {
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row justify-content-center" }, [
       _c("div", { staticClass: "col-md-8" }, [
-        _c("div", { staticClass: "card" }, [
-          _c("p", { staticClass: "card-header" }, [_vm._v(_vm._s(_vm.city))])
+        _c("div", { staticClass: "card mt-3" }, [
+          _c("div", { staticClass: "card-header" }, [
+            _vm._v("Weather Forecast for " + _vm._s(_vm.city))
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "card-body" },
+            _vm._l(_vm.weatherList, function(item) {
+              return _c(
+                "div",
+                { key: item.dt, staticClass: "list-group list-group-flush" },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "list-group-item list-group-item-action" },
+                    [
+                      _c("p", { staticClass: "font-weight-bold" }, [
+                        _c("img", {
+                          attrs: {
+                            src:
+                              _vm.weatherImgUrl + item.weather[0].icon + ".png"
+                          }
+                        }),
+                        _vm._v(
+                          "\n                                " +
+                            _vm._s(item.dt_txt) +
+                            "\n                            "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-4 text-uppercase" }, [
+                          _vm._v(_vm._s(item.weather[0].description))
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-4" }, [
+                          _vm._v("TEMP: " + _vm._s(item.main.temp) + " K")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-4" }, [
+                          _vm._v("PRESSURE: " + _vm._s(item.main.pressure))
+                        ])
+                      ])
+                    ]
+                  )
+                ]
+              )
+            }),
+            0
+          )
         ])
       ])
     ])

@@ -5,8 +5,7 @@ namespace App\Http\Services;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 
-class WeatherClient implements WeatherContract
-{
+class WeatherClient implements WeatherContract {
     /**
      * @var Client
      */
@@ -15,8 +14,7 @@ class WeatherClient implements WeatherContract
     /**
      * WeatherClient constructor
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->guzzle = new Client();
     }
 
@@ -24,8 +22,7 @@ class WeatherClient implements WeatherContract
      * @param string $city
      * @return array
      */
-    public function request($city)
-    {
+    public function request($city) {
         $params = http_build_query([
             'q'     => $city,
             'appid' => config('app.weather_api_key')
