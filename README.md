@@ -7,6 +7,7 @@ with T + 11 digits of trn_teacher.id with leading zeros like
 Trainer/Assessor/Staff) using table trn_teacher and
 trn_teacher_role.
 
+<pre><code>
 SELECT 
     CONCAT('T', LPAD(trn_teacher.id, 5, '0')) AS id,
     trn_teacher.nickname, 
@@ -26,6 +27,7 @@ FROM
     trn_teacher.id = trn_teacher_role.teacher_id
 GROUP BY
     trn_teacher.id
+</pre></code>
 
 2. Write a query to display the ff columns ID (from teacher.id),
 Nickname, Open (total open slots from trn_teacher_time_table),
@@ -35,6 +37,7 @@ no_show from trn_evaluation) using all tables above. Should
 show only those who are active (trn_teacher.status = 1 or 2)
 and those who have both Trainer and Assessor role.
 
+<pre><code>
 SELECT
     t.id,
     trn_teacher.nickname,
@@ -62,3 +65,4 @@ WHERE
     trn_teacher_role.role IN(1,2)
 GROUP BY
     trn_teacher.id
+</pre></code>
