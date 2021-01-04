@@ -27,9 +27,8 @@ class LocationClient implements LocationContract {
             'near'          => $city,
             'limit'         => 5,
             'client_id'     => config('app.foursquare_client_id'),
-            'client_secret' => config('app.foursquare_secret')
-            /* 'categoryId'    => Config::get('app.foursquare_'),
-            'v'             => config::get('app.foursquare_'), */
+            'client_secret' => config('app.foursquare_secret'),
+            'v'             => date("Ymd")
         ]);
 
         try {

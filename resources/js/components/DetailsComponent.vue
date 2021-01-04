@@ -3,10 +3,10 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card mt-3">
-                    <div class="card-header">Places To Visit near {{ city }}</div>
+                    <div class="card-header">Places To Visit in {{ city }}</div>
 
                     <div class="card-body">
-                        <div class="list-group list-group-flush" v-for="venue in venues" v-bind:key="venue.id">
+                        <div class="list-group list-group-flush" v-for="venue in venuesList" v-bind:key="venue.id">
                             <div class="list-group-item list-group-item-action">
                                 <p class="font-weight-bold">{{ venue.name }}</p>
                                 <div>

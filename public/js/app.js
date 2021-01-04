@@ -37632,13 +37632,13 @@ var render = function() {
       _c("div", { staticClass: "col-md-8" }, [
         _c("div", { staticClass: "card mt-3" }, [
           _c("div", { staticClass: "card-header" }, [
-            _vm._v("Places To Visit near " + _vm._s(_vm.city))
+            _vm._v("Places To Visit in " + _vm._s(_vm.city))
           ]),
           _vm._v(" "),
           _c(
             "div",
             { staticClass: "card-body" },
-            _vm._l(_vm.venues, function(venue) {
+            _vm._l(_vm.venuesList, function(venue) {
               return _c(
                 "div",
                 { key: venue.id, staticClass: "list-group list-group-flush" },
