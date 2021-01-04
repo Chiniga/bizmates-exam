@@ -53054,7 +53054,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_HomeComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/HomeComponent.vue */ "./resources/js/components/HomeComponent.vue");
-/* harmony import */ var _components_DetailsComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/DetailsComponent.vue */ "./resources/js/components/DetailsComponent.vue");
+/* harmony import */ var _components_DetailsComponent_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/DetailsComponent.vue */ "./resources/js/components/DetailsComponent.vue");
 
 
 
@@ -53088,7 +53088,7 @@ var routes = [{
 }, {
   name: 'view',
   path: '/city-details/:city',
-  component: _components_DetailsComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+  component: _components_DetailsComponent_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
 }];
 var vueRouter = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   mode: 'history',

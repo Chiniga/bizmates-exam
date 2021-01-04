@@ -5,7 +5,7 @@ namespace App\Http\Services;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 
-class WeatherClient implements WeatherContract {
+class LocationClient implements LocationContract {
     /**
      * @var Client
      */
@@ -24,12 +24,16 @@ class WeatherClient implements WeatherContract {
      */
     public function request($city) {
         $params = http_build_query([
-            'q'     => $city,
-            'appid' => config('app.weather_api_key')
+            'near'          => $city,
+            'limit'         => 5,
+            'client_id'     => config('app.foursquare_client_id'),
+            'client_secret' => config('app.foursquare_secret')
+            /* 'categoryId'    => Config::get('app.foursquare_'),
+            'v'             => config::get('app.foursquare_'), */
         ]);
 
         try {
-            $response = $this->guzzle->request('GET', config('app.weather_url') . '?' . $params);
+            $response = $this->guzzle->request('GET', config('app.foursquare_url') . '?' . $params);
             $statusCode = $response->getStatusCode();
             $content = json_decode($response->getBody()->getContents(), true);
         } catch (ClientException $exception) {
