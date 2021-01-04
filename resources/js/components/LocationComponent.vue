@@ -24,7 +24,7 @@
         }, 3000)
     }
 
-    const Weather = {
+    const Location = {
         data: () => {
             return { 
                 city: "",
@@ -37,5 +37,5 @@
         
     }
 
-    export default Weather
+    export default Location
 </script>

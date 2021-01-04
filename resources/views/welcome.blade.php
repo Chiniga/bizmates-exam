@@ -11,7 +11,7 @@
     <body>
         <header></header>
         <div id="app">
-            <weather-component></weather-component>
+            <router-view></router-view>
         </div>
         <footer></footer>
         <script src="{{ asset('js/app.js') }}"></script>

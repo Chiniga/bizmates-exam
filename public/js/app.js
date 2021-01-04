@@ -52977,7 +52977,19 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
 Vue.use(vue_axios__WEBPACK_IMPORTED_MODULE_1___default.a, axios__WEBPACK_IMPORTED_MODULE_2___default.a);
-Vue.component('weather-component', __webpack_require__(/*! ./components/WeatherComponent.vue */ "./resources/js/components/WeatherComponent.vue")["default"]);
+var routes = [{
+  name: 'home',
+  path: '/',
+  component: _components_LocationComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+}, {
+  name: 'view',
+  path: '/:loc',
+  component: _components_WeatherComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+}];
+var vueRouter = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
+  mode: 'history',
+  routes: routes
+});
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -52985,8 +52997,8 @@ Vue.component('weather-component', __webpack_require__(/*! ./components/WeatherC
  */
 
 var app = new Vue({
-  el: '#app'
-});
+  vueRouter: vueRouter
+}).$mount('#app');
 
 /***/ }),
 

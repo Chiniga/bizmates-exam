@@ -28,7 +28,20 @@ window.Vue = require('vue');
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
 
-Vue.component('weather-component', require('./components/WeatherComponent.vue').default);
+const routes = [
+    {
+        name: 'home',
+        path: '/',
+        component: LocationComponent
+    },
+    {
+        name: 'view',
+        path: '/:loc',
+        component: WeatherComponent
+    }
+];
+  
+const vueRouter = new VueRouter({ mode: 'history', routes: routes });
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -36,6 +49,4 @@ Vue.component('weather-component', require('./components/WeatherComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app',
-});
+const app = new Vue({ vueRouter }).$mount('#app');
