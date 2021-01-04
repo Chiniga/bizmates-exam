@@ -14,6 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/weather/{location}', 'WeatherController@index');
+Route::get('/location/{location}', 'LocationController@index');
