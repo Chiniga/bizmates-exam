@@ -3,6 +3,20 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card mt-3">
+                    <div class="card-header">Places To Visit near {{ city }}</div>
+
+                    <div class="card-body">
+                        <div class="list-group list-group-flush" v-for="venue in venues" v-bind:key="venue.id">
+                            <div class="list-group-item list-group-item-action">
+                                <p class="font-weight-bold">{{ venue.name }}</p>
+                                <div>
+                                    {{ venue.location.address }}, {{ venue.location.city }}, {{ venue.location.country }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-3">
                     <div class="card-header">Weather Forecast for {{ city }}</div>
 
                     <div class="card-body">
@@ -32,6 +46,7 @@
             return { 
                 city: this.$route.params.city,
                 weatherList: {},
+                venuesList: {},
                 weatherImgUrl: 'http://openweathermap.org/img/w/'
             }
         },
@@ -48,7 +63,12 @@
                 }
             })
 
-            //
+            // get venues via laravel api
+            this.axios.get(venueAPI).then(function(resp) {
+                if(resp.data.status) {
+                    $this.venuesList = resp.data.data.content.response.venues;
+                }
+            });
         },
     }
 

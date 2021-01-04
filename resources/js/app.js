@@ -1,8 +1,8 @@
 import VueRouter from 'vue-router';
 import VueAxios from 'vue-axios';
 import axios from 'axios';
-import Location from './components/LocationComponent.vue';
-import Weather from './components/WeatherComponent.vue';
+import Home from './components/HomeComponent.vue';
+import Details from './components/DetailsComponent.vue';
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -32,12 +32,12 @@ const routes = [
     {
         name: 'home',
         path: '/',
-        component: Location
+        component: Home
     },
     {
         name: 'view',
         path: '/city-details/:city',
-        component: Weather
+        component: Details
     }
 ];
   
