@@ -21,7 +21,11 @@ trn_teacher_role.
 SELECT 
     CONCAT('T', LPAD(trn_teacher.id, 5, '0')) AS id,
     trn_teacher.nickname, 
-    IF(trn_teacher.status = 1, 'Active', 'Deactivated') AS status,
+    IF(
+        trn_teacher.status = 1, 'Active', IF(
+            trn_teacher.status = 2, 'Deactivated', 'Discontinued'
+        )
+    ) AS status,
     GROUP_CONCAT(
         IF(
             trn_teacher_role.role = 1, 'Trainer', IF(
