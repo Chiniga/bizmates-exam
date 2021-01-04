@@ -27,7 +27,7 @@ FROM
     trn_teacher.id = trn_teacher_role.teacher_id
 GROUP BY
     trn_teacher.id
-</pre></code>
+</code></pre>
 
 2. Write a query to display the ff columns ID (from teacher.id),
 Nickname, Open (total open slots from trn_teacher_time_table),
@@ -65,4 +65,4 @@ WHERE
     trn_teacher_role.role IN(1,2)
 GROUP BY
     trn_teacher.id
-</pre></code>
+</code></pre>
