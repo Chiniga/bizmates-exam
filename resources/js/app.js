@@ -1,8 +1,8 @@
 import VueRouter from 'vue-router';
 import VueAxios from 'vue-axios';
 import axios from 'axios';
-import LocationComponent from './components/LocationComponent.vue';
-import WeatherComponent from './components/WeatherComponent.vue';
+import Location from './components/LocationComponent.vue';
+import Weather from './components/WeatherComponent.vue';
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -32,12 +32,12 @@ const routes = [
     {
         name: 'home',
         path: '/',
-        component: LocationComponent
+        component: Location
     },
     {
         name: 'view',
-        path: '/:loc',
-        component: WeatherComponent
+        path: '/city-details/:city',
+        component: Weather
     }
 ];
   
@@ -49,4 +49,4 @@ const vueRouter = new VueRouter({ mode: 'history', routes: routes });
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({ vueRouter }).$mount('#app');
+const app = new Vue({ router: vueRouter }).$mount('#app');

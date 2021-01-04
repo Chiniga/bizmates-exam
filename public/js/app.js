@@ -1922,24 +1922,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-var timeout;
-
-var getCityDetails = function getCityDetails() {
-  clearTimeout(timeout);
-  timeout = setTimeout(function () {
-    var data = axios.get("/api/get-location/".concat(city)).then(function (result) {});
-  }, 3000);
-};
-
+//
+//
+//
+//
+//
 var Location = {
   data: function data() {
     return {
-      city: "",
-      fourRes: []
+      cities: ['Tokyo', 'Yokohama', 'Kyoto', 'Osaka', 'Sapporo', 'Nagoya']
     };
-  },
-  methods: {
-    getCityDetails: getCityDetails
   }
 };
 /* harmony default export */ __webpack_exports__["default"] = (Location);
@@ -1967,26 +1959,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-var timeout;
-
-var getCityDetails = function getCityDetails() {
-  clearTimeout(timeout);
-  timeout = setTimeout(function () {
-    var data = axios.get("/api/get-location/".concat(city)).then(function (result) {});
-  }, 3000);
-};
-
 var Weather = {
+  created: function created() {
+    var location = this.$route.params.city;
+    var venueAPI = "/api/location/".concat(location);
+    var weatherAPI = "/api/weather/".concat(location); // get weather via laravel api
+
+    this.axios.get(weatherAPI, function (resp) {
+      console.log(resp);
+    }); //
+  },
   data: function data() {
     return {
-      city: "",
-      fourRes: []
+      city: this.$route.params.city
     };
-  },
-  methods: {
-    getCityDetails: getCityDetails
   }
 };
 /* harmony default export */ __webpack_exports__["default"] = (Weather);
@@ -37603,30 +37589,39 @@ var render = function() {
     _c("div", { staticClass: "row justify-content-center" }, [
       _c("div", { staticClass: "col-md-8" }, [
         _c("div", { staticClass: "card" }, [
-          _c("p", [_vm._v("Search for city in Japan")]),
+          _c("p", { staticClass: "card-header" }, [
+            _vm._v("Check for city in Japan")
+          ]),
           _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.city,
-                expression: "city"
-              }
-            ],
-            domProps: { value: _vm.city },
-            on: {
-              keyup: _vm.getCityDetails,
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.city = $event.target.value
-              }
-            }
-          }),
-          _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(_vm.fourRes))])
+          _c(
+            "div",
+            { staticClass: "card-body" },
+            _vm._l(_vm.cities, function(city) {
+              return _c(
+                "div",
+                { key: city, staticClass: "list-group list-group-flush" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass:
+                        "center list-group-item list-group-item-action",
+                      attrs: { to: { name: "view", params: { city: city } } }
+                    },
+                    [
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(city) +
+                          "\n                        "
+                      )
+                    ]
+                  )
+                ],
+                1
+              )
+            }),
+            0
+          )
         ])
       ])
     ])
@@ -37658,30 +37653,7 @@ var render = function() {
     _c("div", { staticClass: "row justify-content-center" }, [
       _c("div", { staticClass: "col-md-8" }, [
         _c("div", { staticClass: "card" }, [
-          _c("p", [_vm._v("Search for city in Japan")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.city,
-                expression: "city"
-              }
-            ],
-            domProps: { value: _vm.city },
-            on: {
-              keyup: _vm.getCityDetails,
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.city = $event.target.value
-              }
-            }
-          }),
-          _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(_vm.fourRes))])
+          _c("p", { staticClass: "card-header" }, [_vm._v(_vm._s(_vm.city))])
         ])
       ])
     ])
@@ -52983,7 +52955,7 @@ var routes = [{
   component: _components_LocationComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
 }, {
   name: 'view',
-  path: '/:loc',
+  path: '/city-details/:city',
   component: _components_WeatherComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
 }];
 var vueRouter = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
@@ -52997,7 +52969,7 @@ var vueRouter = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
  */
 
 var app = new Vue({
-  vueRouter: vueRouter
+  router: vueRouter
 }).$mount('#app');
 
 /***/ }),
