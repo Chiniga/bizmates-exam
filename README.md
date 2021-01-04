@@ -51,6 +51,8 @@ no_show from trn_evaluation) using all tables above. Should
 show only those who are active (trn_teacher.status = 1 or 2)
 and those who have both Trainer and Assessor role.
 
+NOTE: I got confused about this statement _Should show only those who are active (trn_teacher.status = 1 or 2)_ so I provided 2 WHEREs
+
 <pre><code>
 SELECT
     t.id,
@@ -77,8 +79,8 @@ FROM
     trn_teacher_role role2
     ON
     trn_teacher.id = role2.teacher_id AND role2.role = 2
-WHERE
+WHERE (1)
     trn_teacher.status = 1
-    AND
-    trn_teacher_role.role IN(1,2)
+WHERE (2)
+    trn_teacher.status IN(1,2)
 </code></pre>
