@@ -2,15 +2,15 @@
 Laravel Version: 8<br/>
 PHP Version: 8<br/>
 Tools used: Docker, Sail
-
+<br/>
 My code UI and UX are best simply because
 the app is easy to use and to look at. It provides all the information they need with no wasted data.
-The use can also check the weather 5 days in advance which is very helpful for planning ahead.
+The user can also check the weather 5 days in advance which is very helpful for planning ahead.
 
 As you can see, the weather is shown first since this is a weather app and people expect to see the weather conditions.
 After the weather is some helpful information about the places to visit within the desired city.
 
-<p align="center"><strong>MYSQL ANSWER</strong></p>
+<p align="center"><strong>MYSQL ANSWERS</strong></p>
 1. Write a query to display the ff columns ID (should start
 with T + 11 digits of trn_teacher.id with leading zeros like
 'T00000088424'), Nickname, Status and Roles (like
@@ -73,6 +73,4 @@ WHERE
     trn_teacher.status = 1
     AND
     trn_teacher_role.role IN(1,2)
-GROUP BY
-    trn_teacher.id
 </code></pre>
