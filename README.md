@@ -65,10 +65,14 @@ SELECT
     ) AS `noshow`,
 FROM
     trn_teacher t
-    LEFT JOIN
-    trn_teacher_role
+    INNER JOIN
+    trn_teacher_role role1
     ON
-    trn_teacher.id = trn_teacher_role.teacher_id
+    trn_teacher.id = role1.teacher_id AND role1.role = 1
+    INNER JOIN
+    trn_teacher_role role2
+    ON
+    trn_teacher.id = role2.teacher_id AND role2.role = 2
 WHERE
     trn_teacher.status = 1
     AND
