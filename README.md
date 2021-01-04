@@ -1,6 +1,6 @@
-<p align="center">CODE EXPLANATION</p>
-Laravel Version: 8
-PHP Version: 8
+<p align="center"><strong>CODE EXPLANATION</strong></p>
+Laravel Version: 8<br/>
+PHP Version: 8<br/>
 Tools used: Docker, Sail
 
 My code UI and UX are best simply because
@@ -10,7 +10,7 @@ The use can also check the weather 5 days in advance which is very helpful for p
 As you can see, the weather is shown first since this is a weather app and people expect to see the weather conditions.
 After the weather is some helpful information about the places to visit within the desired city.
 
-<p align="center">MYSQL ANSWER</p>
+<p align="center"><strong>MYSQL ANSWER</strong></p>
 1. Write a query to display the ff columns ID (should start
 with T + 11 digits of trn_teacher.id with leading zeros like
 'T00000088424'), Nickname, Status and Roles (like
