@@ -1,4 +1,8 @@
 <p align="center">CODE EXPLANATION</p>
+Laravel Version: 8
+PHP Version: 8
+Tools used: Docker, Sail
+
 My code UI and UX are best simply because
 the app is easy to use and to look at. It provides all the information they need with no wasted data.
 The use can also check the weather 5 days in advance which is very helpful for planning ahead.
