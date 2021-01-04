@@ -1,4 +1,10 @@
 <p align="center">CODE EXPLANATION</p>
+My code UI and UX are best, given the time restriction, simply because
+the app is easy to use and to look at. It provides all the information they need with no wasted data.
+The use can also check the weather 5 days in advance which is very helpful for planning ahead.
+
+As you can see, the weather is shown first since this is a weather app and people expect to see the weather conditions.
+After the weather is some helpful information about the places to visit within the desired city.
 
 <p align="center">MYSQL ANSWER</p>
 1. Write a query to display the ff columns ID (should start
