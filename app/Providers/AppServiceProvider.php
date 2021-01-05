@@ -3,10 +3,10 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Http\Services\WeatherClient;
-use App\Http\Services\WeatherContract;
-use App\Http\Services\LocationClient;
-use App\Http\Services\LocationContract;
+use App\Services\WeatherClient;
+use App\Services\LocationClient;
+use App\Contracts\WeatherContract;
+use App\Contracts\LocationContract;
 
 class AppServiceProvider extends ServiceProvider {
 

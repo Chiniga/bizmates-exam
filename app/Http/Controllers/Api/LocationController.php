@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use App\Http\Services\LocationContract;
+use App\Contracts\LocationContract;
 use App\Helpers\ApiHelper;
 
 class LocationController extends Controller

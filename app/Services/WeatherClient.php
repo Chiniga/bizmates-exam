@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Services;
+namespace App\Services;
 
+use App\Contracts\WeatherContract;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 

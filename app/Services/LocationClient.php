@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Services;
+namespace App\Services;
 
+use App\Contracts\LocationContract;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 
