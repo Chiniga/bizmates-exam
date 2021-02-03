@@ -2,7 +2,7 @@
 
 namespace App\Contracts;
 
-interface LocationContract
+interface ApiContract
 {
     public function request($city);
 }

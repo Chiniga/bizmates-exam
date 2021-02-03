@@ -2,11 +2,11 @@
 
 namespace App\Services;
 
-use App\Contracts\LocationContract;
+use App\Contracts\ApiContract;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 
-class LocationClient implements LocationContract {
+class LocationClient implements ApiContract {
     /**
      * @var Client
      */

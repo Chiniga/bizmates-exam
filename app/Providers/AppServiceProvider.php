@@ -5,15 +5,9 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Services\WeatherClient;
 use App\Services\LocationClient;
-use App\Contracts\WeatherContract;
-use App\Contracts\LocationContract;
+use App\Contracts\ApiContract;
 
 class AppServiceProvider extends ServiceProvider {
-
-    public $bindings = [
-        WeatherContract::class  => WeatherClient::class,
-        LocationContract::class => LocationClient::class
-    ];
 
     /**
      * Register any application services.
@@ -21,7 +15,13 @@ class AppServiceProvider extends ServiceProvider {
      * @return void
      */
     public function register() {
-        //
+        $this->app->bind(ApiContract::class, function($app) {
+            if(request()->has('weather')) {
+                return new WeatherClient();
+            }
+
+            return new LocationClient();
+        });
     }
 
     /**

@@ -53,8 +53,8 @@
         created: function() {
             const $this = this;
             const location = this.$route.params.city
-            const venueAPI = `/api/location/${location}`
-            const weatherAPI = `/api/weather/${location}`
+            const venueAPI = `/api/location/${location}?location=true`
+            const weatherAPI = `/api/weather/${location}?weather=true`
 
             // get weather via laravel api
             this.axios.get(weatherAPI).then(function(resp) {

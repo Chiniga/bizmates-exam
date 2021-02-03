@@ -2,11 +2,11 @@
 
 namespace App\Services;
 
-use App\Contracts\WeatherContract;
+use App\Contracts\ApiContract;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 
-class WeatherClient implements WeatherContract {
+class WeatherClient implements ApiContract {
     /**
      * @var Client
      */

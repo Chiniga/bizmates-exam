@@ -5,15 +5,15 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use App\Contracts\LocationContract;
+use App\Contracts\ApiContract;
 use App\Helpers\ApiHelper;
 
 class LocationController extends Controller
 {
     use ApiHelper;
 
-    public function index($location, LocationContract $locationContract) {
-        $result = $locationContract->request($location);
+    public function index($location, ApiContract $apiContract) {
+        $result = $apiContract->request($location);
 
         if($result['statusCode'] !== Response::HTTP_OK) {
             return $this->respondWithError($result['content']);
